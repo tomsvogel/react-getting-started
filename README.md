@@ -160,9 +160,5 @@ Short Example: We listen to the 'ESC' key and remove the result on keypress.
     }
 ```
 
-
-## testing with yest
-
-
 ## inline styles
 
