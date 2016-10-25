@@ -28,6 +28,20 @@ class Giphy extends Component {
                 this.setState({searchResult: response.data});
             }.bind(this));
 
+    };
+
+    _handleEsc = (event) => {
+        if (event.keyCode === 27) {
+            this.setState({searchResult: []});
+        }
+    };
+
+    componentWillMount() {
+        document.addEventListener('keydown', this._handleEsc);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this._handleEsc);
     }
 
 
