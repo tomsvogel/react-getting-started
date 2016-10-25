@@ -16,7 +16,7 @@ class Giphy extends Component {
     _search = () => {
 
         fetch('http://api.giphy.com/v1/gifs/search?api_key=' + this.props.apiKey +
-            '&q=' + this.state.searchString + '&limit=' + this.props.maxResults)
+            '&q=' + encodeURIComponent(this.state.searchString) + '&limit=' + this.props.maxResults)
             .then(function(response) {
                 if (response.status >= 400) {
                     throw new Error("Bad response from server");
